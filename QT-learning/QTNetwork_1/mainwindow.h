@@ -2,6 +2,8 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QNetworkAccessManager>
+
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -15,7 +17,19 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+
+public:
+    void fetchData();
+
+
+public:
+    void getGithubInfo();
+
+public:
+    void getDataWeather();
 private:
+
+    QNetworkAccessManager *manager;
     Ui::MainWindow *ui;
 };
 #endif // MAINWINDOW_H
