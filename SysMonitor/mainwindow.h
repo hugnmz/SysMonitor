@@ -16,7 +16,7 @@ public:
     ~MainWindow();
 
 private slots:
-      void updateInterface(double cpu, double ram);
+      void updateInterface(double cpu, double ram, QString ip);
 private:
     Ui::MainWindow *ui;
 };

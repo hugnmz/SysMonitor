@@ -283,6 +283,23 @@ debug/moc_systeminforworker.cpp: ../SysMonitor/systeminforworker.h \
 		../../Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/QTimer \
 		../../Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qtimer.h \
 		../../Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qbasictimer.h \
+		../../Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtNetwork/QHostAddress \
+		../../Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtNetwork/qhostaddress.h \
+		../../Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtNetwork/qtnetworkglobal.h \
+		../../Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtNetwork/qtnetwork-config.h \
+		../../Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qshareddata.h \
+		../../Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qhash.h \
+		../../Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtNetwork/qabstractsocket.h \
+		../../Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qiodevice.h \
+		../../Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qdebug.h \
+		../../Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qmap.h \
+		../../Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qtextstream.h \
+		../../Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qlocale.h \
+		../../Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qvariant.h \
+		../../Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qset.h \
+		../../Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qcontiguouscache.h \
+		../../Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qsharedpointer.h \
+		../../Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qsharedpointer_impl.h \
 		debug/moc_predefs.h \
 		../../Qt/Qt5.14.2/5.14.2/mingw73_32/bin/moc.exe
 	C:\Qt\Qt5.14.2\5.14.2\mingw73_32\bin\moc.exe $(DEFINES) --include C:/qt-learning/build-SysMonitor-Desktop_Qt_5_14_2_MinGW_32_bit-Debug/debug/moc_predefs.h -IC:/Qt/Qt5.14.2/5.14.2/mingw73_32/mkspecs/win32-g++ -IC:/qt-learning/SysMonitor -IC:/Qt/Qt5.14.2/5.14.2/mingw73_32/include -IC:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtWidgets -IC:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtGui -IC:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtANGLE -IC:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtNetwork -IC:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore -I. -IC:/Qt/Qt5.14.2/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Qt5.14.2/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/i686-w64-mingw32 -IC:/Qt/Qt5.14.2/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Qt5.14.2/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include -IC:/Qt/Qt5.14.2/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Qt5.14.2/Tools/mingw730_32/i686-w64-mingw32/include ..\SysMonitor\systeminforworker.h -o debug\moc_systeminforworker.cpp
@@ -540,7 +557,12 @@ debug/mainwindow.o: ../SysMonitor/mainwindow.cpp ../SysMonitor/mainwindow.h \
 		../../Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/QObject \
 		../../Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/QTimer \
 		../../Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qtimer.h \
-		../../Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qbasictimer.h
+		../../Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qbasictimer.h \
+		../../Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtNetwork/QHostAddress \
+		../../Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtNetwork/qhostaddress.h \
+		../../Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtNetwork/qtnetworkglobal.h \
+		../../Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtNetwork/qtnetwork-config.h \
+		../../Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtNetwork/qabstractsocket.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\mainwindow.o ..\SysMonitor\mainwindow.cpp
 
 debug/systeminforworker.o: ../SysMonitor/systeminforworker.cpp ../SysMonitor/systeminforworker.h \
@@ -599,7 +621,26 @@ debug/systeminforworker.o: ../SysMonitor/systeminforworker.cpp ../SysMonitor/sys
 		../../Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qobject_impl.h \
 		../../Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/QTimer \
 		../../Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qtimer.h \
-		../../Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qbasictimer.h
+		../../Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qbasictimer.h \
+		../../Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtNetwork/QHostAddress \
+		../../Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtNetwork/qhostaddress.h \
+		../../Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtNetwork/qtnetworkglobal.h \
+		../../Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtNetwork/qtnetwork-config.h \
+		../../Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qshareddata.h \
+		../../Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qhash.h \
+		../../Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtNetwork/qabstractsocket.h \
+		../../Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qiodevice.h \
+		../../Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qdebug.h \
+		../../Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qmap.h \
+		../../Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qtextstream.h \
+		../../Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qlocale.h \
+		../../Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qvariant.h \
+		../../Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qset.h \
+		../../Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qcontiguouscache.h \
+		../../Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qsharedpointer.h \
+		../../Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qsharedpointer_impl.h \
+		../../Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtNetwork/QNetworkInterface \
+		../../Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtNetwork/qnetworkinterface.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\systeminforworker.o ..\SysMonitor\systeminforworker.cpp
 
 debug/moc_mainwindow.o: debug/moc_mainwindow.cpp 

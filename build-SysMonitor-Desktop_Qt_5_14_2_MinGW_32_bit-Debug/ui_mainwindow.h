@@ -32,8 +32,9 @@ public:
     QProgressBar *progressBarCPU;
     QLabel *labelRAM;
     QProgressBar *progressBarRAM;
-    QSpacerItem *verticalSpacer;
     QLabel *labelIP;
+    QSpacerItem *verticalSpacer;
+    QLabel *lblIPPublic;
     QStatusBar *statusbar;
 
     void setupUi(QMainWindow *MainWindow)
@@ -82,15 +83,21 @@ public:
 
         verticalLayout->addWidget(progressBarRAM);
 
-        verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
-
-        verticalLayout->addItem(verticalSpacer);
-
         labelIP = new QLabel(centralwidget);
         labelIP->setObjectName(QString::fromUtf8("labelIP"));
         labelIP->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
         verticalLayout->addWidget(labelIP);
+
+        verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        verticalLayout->addItem(verticalSpacer);
+
+        lblIPPublic = new QLabel(centralwidget);
+        lblIPPublic->setObjectName(QString::fromUtf8("lblIPPublic"));
+        lblIPPublic->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
+
+        verticalLayout->addWidget(lblIPPublic);
 
         MainWindow->setCentralWidget(centralwidget);
         statusbar = new QStatusBar(MainWindow);
@@ -111,6 +118,7 @@ public:
         labelRAM->setText(QCoreApplication::translate("MainWindow", "S\341\273\255 d\341\273\245ng RAM:", nullptr));
         progressBarRAM->setFormat(QCoreApplication::translate("MainWindow", "%p%", nullptr));
         labelIP->setText(QCoreApplication::translate("MainWindow", "IP Local: \304\220ang ki\341\273\203m tra...", nullptr));
+        lblIPPublic->setText(QCoreApplication::translate("MainWindow", "IP Public: \304\220ang ki\341\273\203m tra...", nullptr));
     } // retranslateUi
 
 };

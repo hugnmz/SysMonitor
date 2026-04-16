@@ -1,9 +1,16 @@
 #include "systeminforworker.h"
 #include <windows.h>
 
+#include <QHostAddress>
+#include <QNetworkInterface>
+#include <QUrl>
+#include <QNetworkAccessManager>
+#include <QNetworkRequest>
+#include <QNetworkReply>
+
 SystemInforWorker::SystemInforWorker(QObject *parent) :QObject(parent){
     m_timer = new QTimer(this);
-
+    manager =  new QNetworkAccessManager(this);
     // 1s update 1 lần
     connect(m_timer, &QTimer::timeout, this, &SystemInforWorker::fetchStats);
     m_timer->start(1000);
@@ -12,8 +19,9 @@ SystemInforWorker::SystemInforWorker(QObject *parent) :QObject(parent){
 void SystemInforWorker::fetchStats(){
     double cpu = getCpuUsage();
     double ram = getRamUsage();
-
-    emit dataUpdated(cpu, ram); // phát ra tín hiệu chứa dữ liệu
+    QString ip = getLocalIp();
+    getPublicIp();
+    emit dataUpdated(cpu, ram, ip); // phát ra tín hiệu chứa dữ liệu
 }
 
 
@@ -62,4 +70,36 @@ double SystemInforWorker::getCpuUsage(){
 
         // return ve % CPU dang hd
         return (double)(diffTotal - diffIdle) * 100/diffTotal;
+}
+
+QString SystemInforWorker::getLocalIp(){
+    const QHostAddress &local = QHostAddress(QHostAddress::LocalHost);
+
+
+    for(const QHostAddress &address : QNetworkInterface::allAddresses()){
+        if(address != local && address.protocol() == QAbstractSocket::IPv4Protocol) return address.toString();
+    }
+
+    return local.toString();
+}
+
+void SystemInforWorker::getPublicIp(){
+
+
+
+    QUrl url("http://api.ipify.org");
+    QNetworkRequest request(url);
+
+    QNetworkReply *reply = manager->get(request);
+
+    connect(reply, &QNetworkReply::finished,[this, reply](){
+       if(reply->error() == QNetworkReply::NoError){
+           QByteArray responseData = reply->readAll();
+
+           QString rs = QString::fromUtf8(responseData);
+           emit publicIpReceive(rs);
+       }
+
+       reply->deleteLater();
+    });
 }

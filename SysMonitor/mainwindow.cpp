@@ -11,15 +11,19 @@ MainWindow::MainWindow(QWidget *parent)
     SystemInforWorker *worker = new SystemInforWorker();
 
     connect(worker, &SystemInforWorker::dataUpdated, this, &MainWindow::updateInterface);
+    connect(worker, &SystemInforWorker::publicIpReceive, [this](QString ip){
+        ui->lblIPPublic->setText("IP Public: " + ip);
+    });
 
     // kết nối signals
 
 }
 
 
-void MainWindow::updateInterface(double cpu, double ram){
+void MainWindow::updateInterface(double cpu, double ram, QString ip){
     ui->progressBarCPU->setValue(static_cast<int>(cpu));
         ui->progressBarRAM->setValue(static_cast<int>(ram));
+        ui->labelIP->setText("IP Local: " + ip);
 }
 
 MainWindow::~MainWindow()

@@ -80,6 +80,16 @@
      </widget>
     </item>
     <item>
+     <widget class="QLabel" name="labelIP">
+      <property name="text">
+       <string>IP Local: Đang kiểm tra...</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item>
      <spacer name="verticalSpacer">
       <property name="orientation">
        <enum>Qt::Vertical</enum>
@@ -93,9 +103,9 @@
      </spacer>
     </item>
     <item>
-     <widget class="QLabel" name="labelIP">
+     <widget class="QLabel" name="lblIPPublic">
       <property name="text">
-       <string>IP Local: Đang kiểm tra...</string>
+       <string>IP Public: Đang kiểm tra...</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>

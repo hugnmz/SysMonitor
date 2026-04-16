@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MainWindow_t {
-    QByteArrayData data[5];
-    char stringdata0[36];
+    QByteArrayData data[6];
+    char stringdata0[39];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -36,10 +36,12 @@ QT_MOC_LITERAL(0, 0, 10), // "MainWindow"
 QT_MOC_LITERAL(1, 11, 15), // "updateInterface"
 QT_MOC_LITERAL(2, 27, 0), // ""
 QT_MOC_LITERAL(3, 28, 3), // "cpu"
-QT_MOC_LITERAL(4, 32, 3) // "ram"
+QT_MOC_LITERAL(4, 32, 3), // "ram"
+QT_MOC_LITERAL(5, 36, 2) // "ip"
 
     },
-    "MainWindow\0updateInterface\0\0cpu\0ram"
+    "MainWindow\0updateInterface\0\0cpu\0ram\0"
+    "ip"
 };
 #undef QT_MOC_LITERAL
 
@@ -57,10 +59,10 @@ static const uint qt_meta_data_MainWindow[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    2,   19,    2, 0x08 /* Private */,
+       1,    3,   19,    2, 0x08 /* Private */,
 
  // slots: parameters
-    QMetaType::Void, QMetaType::Double, QMetaType::Double,    3,    4,
+    QMetaType::Void, QMetaType::Double, QMetaType::Double, QMetaType::QString,    3,    4,    5,
 
        0        // eod
 };
@@ -71,7 +73,7 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         auto *_t = static_cast<MainWindow *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->updateInterface((*reinterpret_cast< double(*)>(_a[1])),(*reinterpret_cast< double(*)>(_a[2]))); break;
+        case 0: _t->updateInterface((*reinterpret_cast< double(*)>(_a[1])),(*reinterpret_cast< double(*)>(_a[2])),(*reinterpret_cast< QString(*)>(_a[3]))); break;
         default: ;
         }
     }
