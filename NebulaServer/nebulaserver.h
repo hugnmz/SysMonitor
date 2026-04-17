@@ -12,6 +12,4 @@ public:
     void incomingConnection(qintptr socketDescriptor) override;
 };
 
-
-
 #endif // NEBULASERVER_H

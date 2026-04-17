@@ -1,3 +1,4 @@
+
 QT -= gui
 QT += core network
 
@@ -31,3 +32,5 @@ HEADERS += \
 
 RESOURCES += \
     Config.qrc
+# Thêm vào cuối file NebulaServer.pro
+include(../NebulaCommon/NebulaCommon.pri)
