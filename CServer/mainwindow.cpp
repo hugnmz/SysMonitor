@@ -74,14 +74,6 @@ void MainWindow::readSocket(){
     // đọc toàn bộ gói tin được gửi
     socketStream >> buffer;
 
-    // kiểm tra xem số byte được nhận đã đủ chưa
-    if(!socketStream.commitTransaction())
-    {
-        QString message = QString("%1 :: Waiting for more data to come..").arg(socket->socketDescriptor());
-        emit newMessage(message);
-        return;
-    }
-
     // cắt ra đúng 128 byte đầu
     QString header = buffer.mid(0, 128);
     QString fileType = header.split(",")[0].split(":")[1];
@@ -253,8 +245,6 @@ void MainWindow::sendAttachment(QTcpSocket* socket, QString filePath){
                 // set header
                 QByteArray header;
                 header.prepend(QString("fileType:attachment,fileName:%1,fileSize:%2;").arg(fileName).arg(file.size()).toUtf8());
-
-                // resize: tạo ra 1 khung chứa cố định thông tin mô tả file
                 header.resize(128);
 
                 QByteArray byteArray = file.readAll();

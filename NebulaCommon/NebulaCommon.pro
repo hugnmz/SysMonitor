@@ -1,6 +1,7 @@
-QT       += core gui network
+QT -= gui
 
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+TEMPLATE = lib
+CONFIG += staticlib
 
 CONFIG += c++11
 
@@ -16,29 +17,14 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    main.cpp \
-    mainwindow.cpp \
-    systemclient.cpp \
-    systeminforworker.cpp \
-    systemserver.cpp
+    nebulacommon.cpp
 
 HEADERS += \
-    SystemServer.h \
-    mainwindow.h \
-    systemclient.h \
-    systeminforworker.h
-
-FORMS += \
-    mainwindow.ui \
-    systemclient.ui
+    nebulacommon.h \
+    protocol.h
 
 # Default rules for deployment.
-qnx: target.path = /tmp/$${TARGET}/bin
-else: unix:!android: target.path = /opt/$${TARGET}/bin
+unix {
+    target.path = $$[QT_INSTALL_PLUGINS]/generic
+}
 !isEmpty(target.path): INSTALLS += target
-
-RESOURCES += \
-    qss.qrc
-
-DISTFILES += \
-    file.qss

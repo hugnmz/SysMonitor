@@ -1,6 +1,5 @@
 #include "systeminforworker.h"
 #include <windows.h>
-
 #include <QHostAddress>
 #include <QNetworkInterface>
 #include <QUrl>

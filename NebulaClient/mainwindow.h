@@ -2,7 +2,6 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include <SystemServer.h>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -16,10 +15,7 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-private slots:
-      void updateInterface(double cpu, double ram, QString ip);
 private:
     Ui::MainWindow *ui;
-    SystemServer *m_server;
 };
 #endif // MAINWINDOW_H

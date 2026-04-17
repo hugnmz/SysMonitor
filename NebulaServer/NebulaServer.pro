@@ -1,8 +1,8 @@
-QT       += core gui network
+QT -= gui
+QT += core network
 
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
-
-CONFIG += c++11
+CONFIG += c++11 console
+CONFIG -= app_bundle
 
 # The following define makes your compiler emit warnings if you use
 # any Qt feature that has been marked deprecated (the exact warnings
@@ -16,29 +16,18 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    main.cpp \
-    mainwindow.cpp \
-    systemclient.cpp \
-    systeminforworker.cpp \
-    systemserver.cpp
-
-HEADERS += \
-    SystemServer.h \
-    mainwindow.h \
-    systemclient.h \
-    systeminforworker.h
-
-FORMS += \
-    mainwindow.ui \
-    systemclient.ui
+        main.cpp \
+        nebulaserver.cpp \
+        sslworker.cpp
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
-RESOURCES += \
-    qss.qrc
+HEADERS += \
+    SslWorker.h \
+    nebulaserver.h
 
-DISTFILES += \
-    file.qss
+RESOURCES += \
+    Config.qrc

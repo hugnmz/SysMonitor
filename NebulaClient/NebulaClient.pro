@@ -1,4 +1,4 @@
-QT       += core gui network
+QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -16,29 +16,18 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    ../NebulaServer/sslworker.cpp \
     main.cpp \
-    mainwindow.cpp \
-    systemclient.cpp \
-    systeminforworker.cpp \
-    systemserver.cpp
+    mainwindow.cpp
 
 HEADERS += \
-    SystemServer.h \
-    mainwindow.h \
-    systemclient.h \
-    systeminforworker.h
+    ../NebulaServer/sslworker.h \
+    mainwindow.h
 
 FORMS += \
-    mainwindow.ui \
-    systemclient.ui
+    mainwindow.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
-
-RESOURCES += \
-    qss.qrc
-
-DISTFILES += \
-    file.qss
