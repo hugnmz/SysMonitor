@@ -1,0 +1,56 @@
+QMainWindow{
+    background-color: black;
+}
+
+
+#sideBar{
+    background-color: #252526;
+    border: none;
+}
+
+#btnSettings, #btnDashboard, #btnLogout{
+    background-color: transparent;
+    color: white;
+
+    border: none;
+    text-align: left;
+    height: 40px;
+}
+
+#btnDashboard{
+    margin-top: 20px;
+}
+
+#sidebar QPushButton:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+#sideBar QPushButton:checked{
+    background-color: #094771;
+    color: white;
+    border-left: 3px solid #00aaff;
+}
+
+#lblLogo{
+    color: blue;
+    font-size: 18px;
+}
+
+#searchEdit{
+    background-color:  #252526;
+    color: white;
+    height: 25px;
+    border-radius: 10px;
+}
+#scrollArea, #scrollArea > QWidget > QWidget {
+    background: transparent;
+}
+
+/* Quan trọng nhất: lớp viewport bên trong */
+#scrollArea QWidget#qt_scrollarea_viewport {
+    background-color: transparent;
+}
+
+formGroup{
+    background-color: transparent;
+}

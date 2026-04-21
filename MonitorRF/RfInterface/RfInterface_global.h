@@ -1,0 +1,12 @@
+#ifndef RFINTERFACE_GLOBAL_H
+#define RFINTERFACE_GLOBAL_H
+
+#include <QtCore/qglobal.h>
+
+#if defined(RFINTERFACE_LIBRARY)
+#  define RFINTERFACE_EXPORT Q_DECL_EXPORT
+#else
+#  define RFINTERFACE_EXPORT Q_DECL_IMPORT
+#endif
+
+#endif // RFINTERFACE_GLOBAL_H

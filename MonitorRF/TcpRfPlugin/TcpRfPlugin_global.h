@@ -1,0 +1,12 @@
+#ifndef TCPRFPLUGIN_GLOBAL_H
+#define TCPRFPLUGIN_GLOBAL_H
+
+#include <QtCore/qglobal.h>
+
+#if defined(TCPRFPLUGIN_LIBRARY)
+#  define TCPRFPLUGIN_EXPORT Q_DECL_EXPORT
+#else
+#  define TCPRFPLUGIN_EXPORT Q_DECL_IMPORT
+#endif
+
+#endif // TCPRFPLUGIN_GLOBAL_H

@@ -1,0 +1,24 @@
+#ifndef TCPRFPLUGIN_H
+#define TCPRFPLUGIN_H
+
+#include "TcpRfPlugin_global.h"
+#include <QObject>
+#include <QThread>
+#include "rfinterface.h"
+#include "tcpworker.h"
+
+// đóng vai trò để host có thể nhìn thấy và ra lệnh cho bên dưới
+class TCPRFPLUGIN_EXPORT TcpRfPlugin : public RfInterface
+{
+    
+    Q_OBJECT
+    Q_PLUGIN_METADATA(IID RfInterface_IID) // Đăng ký ID Plugin
+    Q_INTERFACES(RfInterface)
+public:
+    explicit TcpRfPlugin(QObject *parent = nullptr);
+    ~TcpRfPlugin();
+    
+    // thực hiện các hàm ảo tại Rfinterface
+};
+
+#endif // TCPRFPLUGIN_H

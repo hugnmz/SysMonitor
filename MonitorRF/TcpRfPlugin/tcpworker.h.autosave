@@ -1,0 +1,35 @@
+#ifndef TCPWORKER_H
+#define TCPWORKER_H
+
+/*
+    đóng vai trò quản lí socket - xử l í bất đồng bộ và tính toán FFT
+*/
+
+#include <QObject>
+#include <QTcpSocket>
+#include "rfinterface.h"
+
+class TcpWorker : public QObject{
+    Q_OBJECT
+    public:
+        explicit TcpWorker(QObject *parent = nullptr);
+    
+public slots:
+    // các lệnh nhận điều phối từ rf plugin
+    void onSetupDevice(QString params);
+    void onSetFrequency(double mhz);
+    void onStartStream();
+    void onEndStream();
+    
+private slots:
+    void readyRead(); // đọc data gửi về
+signals:
+    void dataReady(const RfDataPacket &data); // guiwr data lên cho UI
+private:
+    QTcpSocket* socket;
+    bool m_isStreaming = false;
+    QByteArray m_buffer; // tích lũy đủ 1024 byte trước khi FFT
+    
+};
+
+#endif // TCPWORKER_H
